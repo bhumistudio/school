@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bhumisparsha School · Em breve / Coming soon</title>
+<meta name="description" content="Bhumisparsha School volta ao ar em breve. / Bhumisparsha School is coming back online soon.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#050f0b; --canopy:#0d2a1e; --moss:#2f6b4a; --signal:#3df5d0; --magenta:#ff2fa3; --text:#d8efe4; --dim:#8fb5a2;
+  --f-blue:#2b7fff; --f-white:#f2f0e6; --f-red:#ff3b4e; --f-green:#37d67a; --f-yellow:#ffc933;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif; --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{color-scheme:dark;background:var(--night)}
+body{margin:0;min-height:100vh;color:var(--text);font:400 1.05rem/1.6 var(--body);
+  background:
+    repeating-linear-gradient(90deg,transparent 0 47px,rgba(61,245,208,.05) 47px 48px),
+    repeating-linear-gradient(0deg,transparent 0 47px,rgba(61,245,208,.04) 47px 48px),
+    radial-gradient(120% 70% at 70% 0%,var(--canopy),var(--night) 70%);
+  padding-bottom:22vh;position:relative;overflow-x:hidden}
+/* cipós: cabos-vinhas neon pendurados */
+body::before{content:"";position:absolute;inset:0 0 auto 0;height:42vh;pointer-events:none;
+  background:
+    linear-gradient(var(--signal),transparent) 6%/2px 70% no-repeat,
+    linear-gradient(var(--magenta),transparent) 11%/2px 38% no-repeat,
+    linear-gradient(var(--moss),transparent) 17%/3px 55% no-repeat,
+    linear-gradient(var(--signal),transparent) 83%/2px 46% no-repeat,
+    linear-gradient(var(--moss),transparent) 90%/3px 72% no-repeat,
+    linear-gradient(var(--magenta),transparent) 95%/2px 30% no-repeat;opacity:.55}
+.mount{position:fixed;left:0;right:0;bottom:0;height:24vh;width:100%;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0}
+.mark{font:800 1rem var(--display);letter-spacing:.02em}
+.lang{display:flex;gap:.4rem}
+.lang button{font:600 .85rem var(--body);color:var(--dim);background:transparent;border:1px solid var(--moss);border-radius:4px;padding:.35rem .7rem;cursor:pointer}
+.lang button[aria-pressed="true"]{color:var(--night);background:var(--signal);border-color:var(--signal)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--f-yellow);outline-offset:3px}
+h1{font:800 clamp(2.8rem,10vw,7.2rem)/.95 var(--display);margin:clamp(2rem,8vh,5rem) 0 1.2rem;letter-spacing:-.02em;
+  text-shadow:3px 0 var(--magenta),-3px 0 var(--signal)}
+.lead{max-width:34rem;font-size:1.2rem;color:var(--text);margin:0 0 3rem}
+/* bandeiras de oração = links para os subdomínios */
+.string{height:2px;background:linear-gradient(90deg,transparent,var(--dim) 5%,var(--dim) 95%,transparent);margin-top:2rem}
+.flags{list-style:none;margin:0 0 3.5rem;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem}
+.flags li{filter:drop-shadow(0 0 10px var(--c));transform-origin:top center}
+.flags a{display:flex;flex-direction:column;justify-content:flex-start;gap:.3rem;min-height:11.5rem;padding:1.1rem .9rem 3rem;color:var(--ink,#06120d);text-decoration:none;
+  background:var(--c);clip-path:polygon(0 0,100% 0,100% 100%,50% 86%,0 100%);transition:transform .2s}
+.flags a:hover{transform:translateY(6px)}
+.flags b{font:800 1rem/1.15 var(--display)}
+.flags span{font-size:.85rem;line-height:1.3;font-weight:600}
+.flags li:nth-child(1){--c:var(--f-blue);--ink:#fff}
+.flags li:nth-child(2){--c:var(--f-white)}
+.flags li:nth-child(3){--c:var(--f-red);--ink:#fff}
+.flags li:nth-child(4){--c:var(--f-green)}
+.flags li:nth-child(5){--c:var(--f-yellow)}
+@media (prefers-reduced-motion:no-preference){
+  .flags li{animation:sway 5s ease-in-out infinite}
+  .flags li:nth-child(2n){animation-delay:-1.7s}.flags li:nth-child(3n){animation-delay:-3.1s}
+  @keyframes sway{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg)}}
+}
+h2{font:500 1.25rem var(--display);margin:0 0 1rem}
+.log{max-width:40rem;margin:0 0 3rem;padding:1.2rem 1.4rem;border:1px solid var(--moss);border-left:4px solid var(--signal);background:rgba(5,15,11,.78);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.95rem;line-height:1.9}
+.log p{margin:0}.log .ok{color:var(--signal)}.log .wait{color:var(--f-yellow)}
+footer{color:var(--dim);font-size:.9rem;padding:1rem 0 2rem}
+@media (max-width:760px){
+  .flags{grid-template-columns:repeat(2,1fr)}
+  .flags li:last-child{grid-column:1/-1}
+  .flags a{min-height:9.5rem}
+}
+html[lang="pt-BR"] .en,html[lang="en"] .pt{display:none}
+</style>
+</head>
+<body>
+<svg class="mount" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+  <polygon fill="#0a1f17" points="0,300 0,170 140,90 230,150 380,40 520,160 640,110 780,20 930,150 1060,80 1200,140 1330,60 1440,130 1440,300"/>
+  <polygon fill="#0d2a1e" points="0,300 0,220 120,160 260,230 420,140 560,230 720,170 880,240 1040,160 1180,235 1320,170 1440,220 1440,300"/>
+  <polygon fill="#06120d" points="0,300 0,262 90,236 170,266 260,230 350,268 470,240 560,270 690,236 800,268 920,238 1030,270 1150,240 1250,268 1350,240 1440,266 1440,300"/>
+  <polyline fill="none" stroke="#3df5d0" stroke-width="1.5" opacity=".7" points="0,170 140,90 230,150 380,40 520,160 640,110 780,20 930,150 1060,80 1200,140 1330,60 1440,130"/>
+</svg>
+
+<div class="wrap">
+  <header>
+    <span class="mark">Bhumisparsha School</span>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-set="pt-BR" aria-pressed="true">PT</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <h1><span class="pt">Em breve</span><span class="en">Coming soon</span></h1>
+    <p class="lead">
+      <span class="pt">A Bhumisparsha School está reconstruindo sua casa digital. Da floresta brasileira ao Himalaia, novidades a caminho. Enquanto isso, visite os territórios que já estão no ar.</span>
+      <span class="en">Bhumisparsha School is rebuilding its digital home. From the Brazilian forest to the Himalayas, news is on the way. Meanwhile, visit the territories that are already online.</span>
+    </p>
+
+    <div class="string" aria-hidden="true"></div>
+    <ul class="flags">
+      <li><a href="https://technosutra.bhumisparshaschool.org"><b>Techno Sutra</b><span class="pt">Visitar</span><span class="en">Visit</span></a></li>
+      <li><a href="https://dharmaplay.bhumisparshaschool.org"><b>Dharma Play</b><span class="pt">Visitar</span><span class="en">Visit</span></a></li>
+      <li><a href="https://prataprint.bhumisparshaschool.org"><b>Prata Print</b><span class="pt">Visitar</span><span class="en">Visit</span></a></li>
+      <li><a href="https://shop.bhumisparshaschool.org"><b><span class="pt">Loja</span><span class="en">Shop</span></b><span class="pt">Visitar</span><span class="en">Visit</span></a></li>
+      <li><a href="https://vulcao.bhumisparshaschool.org"><b><span class="pt">Vulcão</span><span class="en">Volcano</span></b><span class="pt">Visitar</span><span class="en">Visit</span></a></li>
+    </ul>
+
+    <h2><span class="pt">O que vem por aí</span><span class="en">What’s coming</span></h2>
+    <div class="log">
+      <p class="ok"><span class="pt">✔ domínio ativo</span><span class="en">✔ domain online</span></p>
+      <p class="ok"><span class="pt">✔ subdomínios conectados</span><span class="en">✔ subdomains connected</span></p>
+      <p class="wait"><span class="pt">… novo site da escola</span><span class="en">… new school website</span></p>
+      <p class="wait"><span class="pt">… agenda de práticas e encontros</span><span class="en">… schedule of practices and gatherings</span></p>
+      <p class="wait"><span class="pt">… projetos Brasil · Nepal</span><span class="en">… Brazil · Nepal projects</span></p>
+    </div>
+  </main>
+
+  <footer>
+    <span class="pt">Bhumisparsha: tocar a terra.</span>
+    <span class="en">Bhumisparsha: touching the earth.</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var html=document.documentElement, btns=document.querySelectorAll('.lang button');
+  function set(l){
+    html.lang=l;
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false')});
+    document.title=l==='en'?'Bhumisparsha School · Coming soon':'Bhumisparsha School · Em breve';
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  var saved=null;
+  try{saved=localStorage.getItem('lang')}catch(e){}
+  set(saved||((navigator.language||'').toLowerCase().indexOf('pt')===0?'pt-BR':'en'));
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+})();
+</script>
+</body>
+</html>
